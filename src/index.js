@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 import "./styles.css";
 
+import DevLogos from "./img/sprite.svg";
+import logo from "./img/react.svg";
+
 const Container = styled.div`
   font-family: sans-serif;
   text-align: center;
@@ -24,6 +27,10 @@ const Project = styled.li`
 const Title = styled.div``;
 const Languages = styled.div``;
 const Skills = styled.div``;
+const Skill = styled.svg`
+  height: 2rem;
+  width: 2rem;
+`;
 const Participants = styled.div``;
 const Level = styled.div``;
 
@@ -34,7 +41,10 @@ function App() {
         <Project>
           <Title>A spotify Clone</Title>
           <Languages>JS</Languages>
-          <Skills>Redux, Node, Git</Skills>
+          <Skills>
+            <img src={logo} alt="azd" />
+            <Skill />
+          </Skills>
           <Level>Beginner</Level>
           <Participants>1/4</Participants>
         </Project>
