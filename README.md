@@ -1,2 +1,0 @@
-# scoot
-Created with CodeSandbox
