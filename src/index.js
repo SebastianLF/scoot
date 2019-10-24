@@ -14,8 +14,10 @@ import Project from "./pages/Project"
 import "./styles.css";
 
 const Container = styled.div`
-  max-width: 100rem;
-  margin: 0 auto;
+  max-width: 60vw;
+  margin: 2rem auto;
+  height: 100vh;
+  
 `;
 
 const App = function () {
