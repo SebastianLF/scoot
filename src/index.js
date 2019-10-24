@@ -5,32 +5,45 @@ import styled from "styled-components";
 import "./styles.css";
 
 import DevLogos from "./img/sprite.svg";
-import logo from "./img/react.svg";
 
 const Container = styled.div`
+  max-width: 100rem;
+  margin: 0 auto;
   font-family: sans-serif;
   text-align: center;
   color: grey;
 `;
 
-const List = styled.ul`
+const List = styled.div`
   height: 7rem;
 `;
 
-const Project = styled.li`
+const Project = styled.a`
   border-bottom: 1px solid #e6eaee;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 1.2rem;
 `;
 
-const Title = styled.div``;
-const Languages = styled.div``;
-const Skills = styled.div``;
-const Skill = styled.svg`
-  height: 2rem;
+const Creator = styled.div`
   width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 `;
+const Title = styled.div``;
+const Languages = styled.div`
+  display: flex;
+`;
+const Language = styled.svg``;
+const Icons = styled.div`
+  display: flex;
+`;
+const Icon = styled.svg`
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 0.25rem 0 0;
+`
 const Participants = styled.div``;
 const Level = styled.div``;
 
@@ -38,13 +51,19 @@ function App() {
   return (
     <Container>
       <List>
-        <Project>
+        <Project href='#'>
+          <Creator></Creator>
           <Title>A spotify Clone</Title>
-          <Languages>JS</Languages>
-          <Skills>
-            <img src={logo} alt="azd" />
-            <Skill />
-          </Skills>
+          <Languages>
+            <Icon><use xlinkHref={`${DevLogos}#icon-javascript`} alt="azd"></use></Icon>
+          </Languages>
+          <Icons>
+            <Icon><use xlinkHref={`${DevLogos}#icon-react`} alt="react"></use></Icon>
+            <Icon><use xlinkHref={`${DevLogos}#icon-redux1`} alt="redux"></use></Icon>
+            <Icon><use xlinkHref={`${DevLogos}#icon-github`} alt="github"></use></Icon>
+            <Icon><use xlinkHref={`${DevLogos}#icon-node-dot-js`} alt="node"></use></Icon>
+            <Icon><use xlinkHref={`${DevLogos}#icon-git`} alt="git"></use></Icon>
+          </Icons>
           <Level>Beginner</Level>
           <Participants>1/4</Participants>
         </Project>
