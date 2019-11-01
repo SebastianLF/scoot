@@ -7,7 +7,7 @@ export const languages = [
     { id: uuid(), value: 'css3', label: 'css3' },
     { id: uuid(), value: 'html5', label: 'html5' },
     { id: uuid(), value: 'typescript', label: 'typescript' },
-    { id: uuid(), value: 'c++', label: 'cplusplus' },
+    { id: uuid(), value: 'cplusplus', label: 'cplusplus' },
     { id: uuid(), value: 'php', label: 'php' },
     { id: uuid(), value: 'java', label: 'java' },
     { id: uuid(), value: 'swift', label: 'swift' },
