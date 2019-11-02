@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import Home from "./pages/Home"
@@ -17,7 +16,6 @@ const Container = styled.div`
   max-width: 60vw;
   margin: 2rem auto;
   height: 100vh;
-  
 `;
 
 const App = function () {
