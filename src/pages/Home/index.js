@@ -15,7 +15,7 @@ const Projects = styled.div``
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [isError, setIsError] = useState(false)
-  const [search, setSearch] = useState([])
+  const [search, setSearch] = useState(null)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -36,8 +36,6 @@ export default function Home() {
   }, [search])
 
   const filterSearch = (e) => {
-    console.log(e)
-
     setSearch(e)
   }
 
