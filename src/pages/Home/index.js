@@ -47,6 +47,11 @@ export default function Home() {
         onChange={filterSearch}
         isMulti
       />
+      <Select
+        options={}
+        placeholder="Timezone"
+        onChange={}
+      />
       {isError ? (
         <div>Something went wrong</div>
       ) : (
