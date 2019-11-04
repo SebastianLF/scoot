@@ -52,6 +52,11 @@ export default function Home() {
         placeholder="Timezone"
         onChange={}
       />
+      <Select
+        options={}
+        placeholder="Open"
+        onChange={}
+      />
       {isError ? (
         <div>Something went wrong</div>
       ) : (
