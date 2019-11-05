@@ -9,13 +9,32 @@ const Container = styled.div`
   font-size: 1rem;
   color: grey;
 `
-const Projects = styled.div``
+const Projects = styled.div`
+  margin: 2rem 0 2rem 0;
+`
+const Button = styled.button`
+  padding: 1em 1.2em;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+`
+const selectStyles = {
+  input: () => ({
+    padding: '0.6rem'
+  })
+}
+const searchOptions = [...languages, ...frameworks]
 
 
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [isError, setIsError] = useState(false)
   const [search, setSearch] = useState(null)
+  const [projectsToDisplay, setProjectsToDisplay] = useState(10)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -42,30 +61,25 @@ export default function Home() {
   return (
     <Container>
       <Select
-        options={languages}
+        options={searchOptions}
+        styles={selectStyles}
         placeholder="Search..."
         onChange={filterSearch}
         isMulti
-      />
-      <Select
-        options={}
-        placeholder="Timezone"
-        onChange={}
-      />
-      <Select
-        options={}
-        placeholder="Open"
-        onChange={}
       />
       {isError ? (
         <div>Something went wrong</div>
       ) : (
           <Projects>
-            {projects.map(project => <ProjectLine key={project.id} {...project} />)}
+            {projects.slice(0, projectsToDisplay).map(project => <ProjectLine key={project.id} {...project} />)}
           </Projects>
         )
       }
-
+      <Button
+        onClick={() => setProjectsToDisplay(projectsToDisplay + 10)}
+        type="text">
+        {(projectsToDisplay - 1) >= projects.length - 1 ? 'No more to display' : 'Show more'}
+      </Button>
     </Container>
   )
 }
