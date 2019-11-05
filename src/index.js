@@ -15,7 +15,7 @@ import "./styles.css";
 const Container = styled.div`
   max-width: 60vw;
   margin: 2rem auto;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const App = function () {
