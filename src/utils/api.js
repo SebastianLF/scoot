@@ -12,7 +12,7 @@ const data = {
 const generateProjects = () => {
     let projects = []
 
-    for (let i = 0; i < randomNumber(20); i++) {
+    for (let i = 0; i < randomNumber(100); i++) {
         const newProject = {
             id: uuid(),
             posted: 'Today',
