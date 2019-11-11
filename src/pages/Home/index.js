@@ -10,7 +10,7 @@ const Container = styled.div`
   color: grey;
 `
 const Projects = styled.div`
-  margin: 2rem 0 2rem 0;
+  margin: 1rem 0 2rem 0;
 `
 const Button = styled.button`
   padding: 1em 1.2em;
@@ -29,12 +29,38 @@ const selectStyles = {
 }
 const searchOptions = [...languages, ...frameworks]
 
+const Text = styled.p`
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+`
+
+const NewProject = styled.section`
+  text-align: center;
+  margin: 0 0 3rem 0;
+`
+
+const SubmitButton = styled.button`
+  padding: 1em 1.2em;
+  margin: 0 0 0 1rem;
+  background: #38ef7d;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+`
+
+const SpaceBar = styled.hr`
+  margin: 2rem 0 2rem 0;  
+`
 
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [isError, setIsError] = useState(false)
   const [search, setSearch] = useState(null)
   const [projectsToDisplay, setProjectsToDisplay] = useState(10)
+
+  const displayMore = projects.length > projectsToDisplay ? true : false
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -60,6 +86,10 @@ export default function Home() {
 
   return (
     <Container>
+      <NewProject>
+        <Text>Want your project to appear on this list?</Text>
+        <SubmitButton>Submit your project</SubmitButton>
+      </NewProject>
       <Select
         options={searchOptions}
         styles={selectStyles}
@@ -75,11 +105,15 @@ export default function Home() {
           </Projects>
         )
       }
-      <Button
-        onClick={() => setProjectsToDisplay(projectsToDisplay + 10)}
-        type="text">
-        {(projectsToDisplay - 1) >= projects.length - 1 ? 'No more to display' : 'Show more'}
-      </Button>
+
+      {displayMore ? (
+        <Button
+          onClick={() => setProjectsToDisplay(projectsToDisplay + 10)}
+          type="text">
+          {(projectsToDisplay - 1) >= projects.length - 1 ? 'No more to display' : 'Show more'}
+        </Button>
+      ) : ''
+      }
     </Container>
   )
 }
