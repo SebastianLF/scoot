@@ -18,6 +18,8 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
+const NoMatch = styled.div``
+
 const App = function () {
   return (
     <Router>
@@ -25,6 +27,9 @@ const App = function () {
         <Switch>
           <Route exact path="/"><Home /></Route>
           <Route path="/projects/:id"><Project /></Route>
+          <Route path="*">
+            <NoMatch />
+          </Route>
         </Switch>
       </Container>
     </Router>
