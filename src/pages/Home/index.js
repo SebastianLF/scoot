@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Select from "react-select"
 import styled from "styled-components"
 import ProjectLine from "../../components/ProjectLine"
+import Modal from "../../components/Modal"
 import api from '../../utils/api'
 import { languages, frameworks } from '../../utils/data'
 
@@ -50,15 +51,13 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `
 
-const SpaceBar = styled.hr`
-  margin: 2rem 0 2rem 0;  
-`
 
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [isError, setIsError] = useState(false)
   const [search, setSearch] = useState(null)
   const [projectsToDisplay, setProjectsToDisplay] = useState(10)
+  const [showModal, setShowModal] = useState(false)
 
   const displayMore = projects.length > projectsToDisplay ? true : false
 
@@ -66,12 +65,9 @@ export default function Home() {
     const fetchProjects = async () => {
       try {
         const fetchedProjects = await api.projects.search(search)
-        console.log(fetchedProjects)
-
         setProjects(fetchedProjects)
 
       } catch (error) {
-        console.log(error);
 
         setIsError(true)
       }
@@ -86,9 +82,10 @@ export default function Home() {
 
   return (
     <Container>
+      <Modal showModal={showModal} />
       <NewProject>
         <Text>Want your project to appear on this list?</Text>
-        <SubmitButton>Submit your project</SubmitButton>
+        <SubmitButton onClick={() => setShowModal(true)}>Submit your project</SubmitButton>
       </NewProject>
       <Select
         options={searchOptions}
