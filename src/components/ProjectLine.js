@@ -71,13 +71,13 @@ export default function ProjectLine(props) {
 
       <Languages>
         <Body small>
-          {props.languages && props.languages.map((language) => <Icon key={language.id} icon={language.label}></Icon>)}
+          {props.languages && props.languages.map((language) => <Icon key={language.id} icon={language.value}></Icon>)}
         </Body>
         <Head smallicon>Languages</Head>
       </Languages>
       <Skills>
         <Body small>
-          {props.skills && props.skills.map((skill) => <Icon key={skill.id} icon={skill.label}></Icon>)}
+          {props.skills && props.skills.map((skill) => <Icon key={skill.id} icon={skill.value}></Icon>)}
         </Body>
         <Head smallicon>Tools & frameworks</Head>
       </Skills>

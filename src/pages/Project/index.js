@@ -148,8 +148,6 @@ export default function Project(props) {
     const [infos, getInfos] = useState('')
     let { id } = useParams()
 
-
-
     return (
         <Container>
             <Header>
