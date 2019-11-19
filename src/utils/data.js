@@ -18,15 +18,15 @@ export const frameworks = [
     { id: uuid(), value: 'react', label: 'react' },
     { id: uuid(), value: 'angular', label: 'angular' },
     { id: uuid(), value: 'symfony', label: 'symfony' },
-    { id: uuid(), value: 'vue-dot-js', label: 'vue-dot-js' },
-    { id: uuid(), value: 'node-dot-js', label: 'node-dot-js' },
+    { id: uuid(), value: 'vue-dot-js', label: 'Vue js' },
+    { id: uuid(), value: 'node-dot-js', label: 'Node js' },
     { id: uuid(), value: 'wordpress', label: 'wordpress' },
     { id: uuid(), value: 'drupal', label: 'drupal' },
     { id: uuid(), value: 'bootstrap', label: 'bootstrap' },
     { id: uuid(), value: 'codeigniter', label: 'codeigniter' },
-    { id: uuid(), value: 'd3-dot-js', label: 'd3-dot-js' },
+    { id: uuid(), value: 'd3-dot-js', label: 'D3 js' },
     { id: uuid(), value: 'django', label: 'django' },
-    { id: uuid(), value: 'dot-net', label: 'dot-net' },
+    { id: uuid(), value: 'dot-net', label: 'Dot net' },
     { id: uuid(), value: 'jquery', label: 'jquery' },
     { id: uuid(), value: 'laravel', label: 'laravel' },
     { id: uuid(), value: 'meteor', label: 'meteor' },
@@ -48,10 +48,10 @@ export const tools = [
 ]
 
 export const browsers = [
-    { id: uuid(), value: 'safari', label: 'safari' },
-    { id: uuid(), value: 'googlechrome', label: 'googlechrome' },
-    { id: uuid(), value: 'internetexplorer', label: 'internetexplorer' },
-    { id: uuid(), value: 'mozillafirefox', label: 'mozillafirefox' },
+    { id: uuid(), value: 'safari', label: 'Safari' },
+    { id: uuid(), value: 'googlechrome', label: 'Google chrome' },
+    { id: uuid(), value: 'internetexplorer', label: 'Internet explorer' },
+    { id: uuid(), value: 'mozillafirefox', label: 'Mozilla firefox' },
 ]
 
 export const systems = [
@@ -63,7 +63,7 @@ export const systems = [
 
 export const editors = [
     { id: uuid(), value: 'vim', label: 'vim' },
-    { id: uuid(), value: 'visualstudiocode', label: 'visualstudiocode' },
+    { id: uuid(), value: 'visualstudiocode', label: 'Visual Studio Code' },
     { id: uuid(), value: 'webstorm', label: 'webstorm' },
     { id: uuid(), value: 'atom', label: 'atom' }
 ]
@@ -76,9 +76,55 @@ export const services = [
 ]
 
 export const db = [
-    { id: uuid(), value: 'mongodb', label: 'mongodb' },
-    { id: uuid(), value: 'mysql', label: 'mysql' },
-    { id: uuid(), value: 'oracle', label: 'oracle' },
-    { id: uuid(), value: 'postgresql', label: 'postgresql' },
-    { id: uuid(), value: 'redis', label: 'redis' },
+    { id: uuid(), value: 'mongodb', label: 'Mongodb' },
+    { id: uuid(), value: 'mysql', label: 'Mysql' },
+    { id: uuid(), value: 'oracle', label: 'Oracle' },
+    { id: uuid(), value: 'postgresql', label: 'Postgresql' },
+    { id: uuid(), value: 'redis', label: 'Redis' },
+]
+
+export const levels = [
+    { id: uuid(), label: 'Beginner' },
+    { id: uuid(), label: 'Intermediate' },
+    { id: uuid(), label: 'Expert' }
+]
+
+export const UTCTimezones = [
+    { id: uuid(), label: 'UTC-12' },
+    { id: uuid(), label: 'UTC-11' },
+    { id: uuid(), label: 'UTC-10' },
+    { id: uuid(), label: 'UTC-9' },
+    { id: uuid(), label: 'UTC-8' },
+    { id: uuid(), label: 'UTC-7' },
+    { id: uuid(), label: 'UTC-6' },
+    { id: uuid(), label: 'UTC-5' },
+    { id: uuid(), label: 'UTC-4' },
+    { id: uuid(), label: 'UTC-3' },
+    { id: uuid(), label: 'UTC-2' },
+    { id: uuid(), label: 'UTC-1' },
+    { id: uuid(), label: 'UTC+0' },
+    { id: uuid(), label: 'UTC+1' },
+    { id: uuid(), label: 'UTC+2' },
+    { id: uuid(), label: 'UTC+3' },
+    { id: uuid(), label: 'UTC+4' },
+    { id: uuid(), label: 'UTC+5' },
+    { id: uuid(), label: 'UTC+6' },
+    { id: uuid(), label: 'UTC+7' },
+    { id: uuid(), label: 'UTC+8' },
+    { id: uuid(), label: 'UTC+9' },
+    { id: uuid(), label: 'UTC+10' },
+    { id: uuid(), label: 'UTC+11' },
+    { id: uuid(), label: 'UTC+12' },
+    { id: uuid(), label: 'UTC+13' },
+    { id: uuid(), label: 'UTC+14' }
+]
+
+export const toolsAndframeworks = [
+    ...frameworks,
+    ...tools,
+    ...browsers,
+    ...systems,
+    ...editors,
+    ...services,
+    ...db
 ]
