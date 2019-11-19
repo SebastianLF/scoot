@@ -82,7 +82,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Modal showModal={showModal} />
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <NewProject>
         <Text>Want your project to appear on this list?</Text>
         <SubmitButton onClick={() => setShowModal(true)}>Submit your project</SubmitButton>
