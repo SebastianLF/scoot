@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from "react"
 import Select from "react-select"
 import styled from "styled-components"
-import ProjectLine from "../../components/ProjectLine"
 import Modal from "../../components/Modal"
+import Projects from "./Projects"
+import MoreButton from "./MoreButton"
 import api from '../../utils/api'
 import { languages, frameworks } from '../../utils/data'
 
+const searchOptions = [...languages, ...frameworks]
+
 const Container = styled.div`
-  font-size: 1rem;
+font-size: 1rem;
   color: grey;
 `
-const Projects = styled.div`
-  margin: 1rem 0 2rem 0;
-`
-const Button = styled.button`
-  padding: 1em 1.2em;
-  display: block;
-  margin: 0 auto;
-  background: #fff;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-`
+
 const selectStyles = {
   input: () => ({
     padding: '0.6rem'
   })
 }
-const searchOptions = [...languages, ...frameworks]
 
 const Text = styled.p`
   display: inline-block;
@@ -51,7 +41,6 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `
 
-
 export default function Home() {
   const [projects, setProjects] = useState([])
   const [isError, setIsError] = useState(false)
@@ -59,8 +48,7 @@ export default function Home() {
   const [projectsToDisplay, setProjectsToDisplay] = useState(10)
   const [showModal, setShowModal] = useState(false)
 
-  const displayMore = projects.length > projectsToDisplay ? true : false
-
+  
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -76,10 +64,6 @@ export default function Home() {
     fetchProjects()
   }, [search])
 
-  const filterSearch = (e) => {
-    setSearch(e)
-  }
-
   return (
     <Container>
       <Modal showModal={showModal} setShowModal={setShowModal} />
@@ -91,26 +75,19 @@ export default function Home() {
         options={searchOptions}
         styles={selectStyles}
         placeholder="Search..."
-        onChange={filterSearch}
+        onChange={(e) => setSearch(e)}
         isMulti
       />
-      {isError ? (
-        <div>Something went wrong</div>
-      ) : (
-          <Projects>
-            {projects.slice(0, projectsToDisplay).map(project => <ProjectLine key={project.id} {...project} />)}
-          </Projects>
-        )
-      }
-
-      {displayMore ? (
-        <Button
-          onClick={() => setProjectsToDisplay(projectsToDisplay + 10)}
-          type="text">
-          {(projectsToDisplay - 1) >= projects.length - 1 ? 'No more to display' : 'Show more'}
-        </Button>
-      ) : ''
-      }
+      <Projects
+        isError={isError}
+        projects={projects}
+        projectsToDisplay={projectsToDisplay}
+      />
+      <MoreButton
+        setProjectsToDisplay={setProjectsToDisplay}
+        projectsToDisplay={projectsToDisplay}
+        projectsLength={projects.length}
+      />
     </Container>
   )
 }
