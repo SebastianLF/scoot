@@ -1,9 +1,7 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import styled from "styled-components"
 import Icon from "./Icon"
 
-import DevLogos from "../assets/img/sprite.svg";
 
 const Container = styled.a`
     font-size: 1rem;
@@ -24,11 +22,6 @@ const Container = styled.a`
     }
 `
 
-const Creator = styled.div`
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  `;
 const Title = styled.div`
     flex: 0 0 15rem;
 `;
@@ -43,7 +36,6 @@ const Head = styled.div`
 const Languages = styled.div`
     flex: 0 0 10rem;
 `;
-const Language = styled.svg``;
 const Skills = styled.div`
     flex: 0 0 15rem;
 `;

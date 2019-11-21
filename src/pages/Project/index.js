@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from "styled-components"
-import {
-    useParams
-} from "react-router-dom"
 import faker from "faker"
 import DevLogos from "../../assets/img/sprite.svg";
 
@@ -39,14 +36,7 @@ const Label = styled.span`
 const Title = styled.h1`
     font-weight: 300;
 `
-const Contact = styled.div`
 
-`
-const Creator = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 0 0.5em 0 0;
-`
 const Avatar = styled.img`
 cursor: pointer;
 margin: 0 0 0 -8px;
@@ -58,12 +48,6 @@ margin: 0 0 0 -8px;
 const Avatars = styled.div`
 margin: 0 1em 0 0;
 `
-const Left = styled.p`
-    font-size: 0.875em;
-    color: #4A00E0;
-`
-const Name = styled.div``
-const Languages = styled.div`height: 100%`
 const Skills = styled.div`
     margin: 1em 0 1em 0;
 `
@@ -87,13 +71,7 @@ const Level = styled.div`
 const Timezone = styled.div`
     margin: 0 1em 0 0;
 `
-const Participants = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    margin-left: auto;
-`
+
 const Description = styled.div`
     font-size: 1.05em;
     color: #636363;
@@ -127,11 +105,7 @@ const Infos = styled.div`
     `
 
 const Commitment = styled.div``
-const TextArea = styled.textarea`
-    outline: none;
-    border: 3px solid #cbd5e0;
-    border-radius: 3px;
-`
+
 const Button = styled.button`
 cursor: pointer;
     margin: 1em 0 1em 0;
@@ -145,9 +119,6 @@ cursor: pointer;
 
 
 export default function Project(props) {
-    const [infos, getInfos] = useState('')
-    let { id } = useParams()
-
     return (
         <Container>
             <Header>
