@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Select from "react-select"
 import styled from "styled-components"
-import Modal from "../../components/Modal"
+import Modal from "../Modal"
 import Projects from "./Projects"
 import MoreButton from "./MoreButton"
 import api from '../../utils/api'
