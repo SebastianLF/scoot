@@ -119,6 +119,11 @@ export const UTCTimezones = [
     { id: uuid(), label: 'UTC+14' }
 ]
 
+export const TimeComittment = [
+    { id: uuid(), label: '10-20 Hours a week' },
+    { id: uuid(), label: '20+ Hours a week' }
+]
+
 export const toolsAndframeworks = [
     ...frameworks,
     ...tools,
